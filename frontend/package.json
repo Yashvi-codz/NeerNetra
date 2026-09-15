@@ -1,0 +1,36 @@
+{
+  "name": "neernetra-frontend",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@deck.gl/aggregation-layers": "^9.4.0",
+    "@deck.gl/core": "^9.4.0",
+    "@deck.gl/extensions": "^9.4.0",
+    "@deck.gl/geo-layers": "^9.4.0",
+    "@deck.gl/layers": "^9.4.0",
+    "@deck.gl/mapbox": "^9.4.0",
+    "jspdf": "^2.5.2",
+    "maplibre-gl": "^4.7.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.26.2",
+    "recharts": "^2.12.7"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.5",
+    "@types/react-dom": "^18.3.0",
+    "@typescript-eslint/eslint-plugin": "^8.5.0",
+    "@typescript-eslint/parser": "^8.5.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "eslint": "^9.9.1",
+    "typescript": "^5.5.4",
+    "vite": "^5.4.6"
+  }
+}

@@ -1,0 +1,144 @@
+:root {
+  /* --- Surface foundation: deep navy / blue-black / dark slate --- */
+  --bg-void: #05080d;
+  --bg-base: #070c13;
+  --bg-panel: #0b131e;
+  --bg-panel-raised: #101a28;
+  --bg-panel-hover: #142032;
+  --bg-inset: #060a11;
+  --bg-header: #0a1119;
+
+  --border-hairline: #1c2b3d;
+  --border-hairline-soft: #16212f;
+  --border-active: #2b4967;
+
+  --text-primary: #e6edf5;
+  --text-secondary: #93a4b8;
+  --text-tertiary: #5c7086;
+  --text-disabled: #3a4a5c;
+
+  /* --- Status / meaning colors --- */
+  --cyan: #37d4ff;
+  --cyan-dim: #1c8fb8;
+  --cyan-bg: rgba(55, 212, 255, 0.08);
+  --cyan-border: rgba(55, 212, 255, 0.35);
+
+  --red: #ff4d4f;
+  --red-dim: #a3282a;
+  --red-bg: rgba(255, 77, 79, 0.1);
+  --red-border: rgba(255, 77, 79, 0.4);
+
+  --amber: #f5a623;
+  --amber-dim: #a06c15;
+  --amber-bg: rgba(245, 166, 35, 0.1);
+  --amber-border: rgba(245, 166, 35, 0.4);
+
+  --green: #35d399;
+  --green-dim: #1c8f65;
+  --green-bg: rgba(53, 211, 153, 0.09);
+  --green-border: rgba(53, 211, 153, 0.38);
+
+  --teal: #2fb8b0;
+
+  /* --- Typography --- */
+  --font-sans: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'IBM Plex Mono', 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* --- Layout rhythm --- */
+  --radius-sm: 2px;
+  --radius-md: 3px;
+  --header-height: 52px;
+  --nav-height: 40px;
+
+  --shadow-panel: 0 1px 0 rgba(0, 0, 0, 0.4);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: var(--bg-void);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--cyan-bg);
+  color: var(--cyan);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-panel);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-active);
+  border-radius: var(--radius-sm);
+}
+
+:focus-visible {
+  outline: 1.5px solid var(--cyan);
+  outline-offset: 1px;
+}
+
+.mono {
+  font-family: var(--font-mono);
+}
+
+.label-xs {
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+  font-weight: 500;
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.status-dot.cyan { background: var(--cyan); box-shadow: 0 0 6px var(--cyan); }
+.status-dot.red { background: var(--red); box-shadow: 0 0 6px var(--red); }
+.status-dot.amber { background: var(--amber); box-shadow: 0 0 6px var(--amber); }
+.status-dot.green { background: var(--green); box-shadow: 0 0 6px var(--green); }
+
+@keyframes pulse-status {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+.pulse {
+  animation: pulse-status 2.2s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
